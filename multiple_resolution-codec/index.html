@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta itemprop="description" content="Client-side WebRTC code samples">
+    <meta itemprop="name" content="WebRTC code samples">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+
+    <base target="_blank">
+
+    <title>Multiple peer connections test</title>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+
+<body>
+    <div id="container">
+        <h1><span id="connectionsText"></h1>
+        <p><code>getUserMedia()</code> Resolution controls</p>
+        <div id="buttons">
+            <button id="qvga">QVGA</button>
+            <button id="vga">VGA</button>
+            <button id="hd">HD (1280x720)</button>
+            <button id="full-hd">Full HD (1920x1080)</button>
+            <button id="televisionFourK">Television 4K (3840x2160)</button>
+            <button id="cinemaFourK">Cinema 4K (4096x2160)</button>
+            <button id="eightK">8K</button>
+        </div>
+        <div id="videoblock">
+            <p id="dimensions"></p>
+
+            <video id="video1" playsinline autoplay muted></video><br />
+            <div id="width">
+                <label>Width <span></span>px:</label>
+                <input type="range" min="0" max="7680" value="0">
+            </div>
+            <input id="sizelock" type="checkbox">Lock video size<br>
+            <input id="aspectlock" type="checkbox">Lock aspect ratio<br>
+        </div>
+        
+        <p><code>RTCPeerConnection()</code> controls</p>
+        <div id="buttons">
+            <button id="callButton">Call</button>
+            <button id="hangupButton">Hang Up</button>
+            <button id="addButton">+</button>
+            <button id="subtractButton">-</button>
+        </div>
+
+        <div class="box">
+            <span>Codec preferences:</span>
+            <select id="codecPreferences" disabled>
+                <option selected value="">Default</option>
+            </select>
+            <div id="actualCodec"></div>
+        </div>
+
+        <video id="video2" playsinline autoplay></video><br/>
+        <video id="video3" playsinline autoplay></video><br/>
+        <video id="video4" playsinline autoplay></video><br/>
+        <video id="video5" playsinline autoplay></video><br/>
+        <video id="video6" playsinline autoplay></video><br/>
+        <video id="video7" playsinline autoplay></video><br/>
+        <video id="video8" playsinline autoplay></video><br/>
+        <video id="video9" playsinline autoplay></video><br/>
+        <video id="video10" playsinline autoplay></video><br/>
+        <video id="video11" playsinline autoplay></video>
+        
+
+        <p>View the console to see logging and to inspect the <code>MediaStream</code> object <code>localStream</code>.</p>
+
+        <p>For more information about RTCPeerConnection, see <a href="http://www.html5rocks.com/en/tutorials/webrtc/basics/"
+                                                                title="HTML5 Rocks article about WebRTC by Sam Dutton">Getting
+            Started With WebRTC</a>.</p>
+
+    </div>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/main.js" async></script>
+</body>
+</html>
